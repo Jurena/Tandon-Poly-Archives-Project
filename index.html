@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Archives Project WIP</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.8.2/css/bulma.min.css">
+    <script defer src="https://use.fontawesome.com/releases/v5.3.1/js/all.js"></script>
+<!--	  bulma spacing-->
+	<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma-spacing/css/bulma-spacing.min.css">
+	<link rel="stylesheet" src="../Website Files/css/main.css">
+
+  </head>
+	
+<body > <!--  onLoad="generate_grid(); clothes_grid();"-->
+  <!-- Banner beginning-->
+      <section class = "hero is-info is-fullheight"> 
+        <section class = "hero-head"> </section>
+        <section class = "hero body"> 
+            <div class= "container">
+                <h1 class="title"> 
+                    Full height banner
+                </h1>
+			</div></section>
+        <section class = "hero-foot"> 
+        </section>
+      </section>  
+  <!-- end of banner
+	Navbar Start 
+	create custom css to make nav sticky to rhs
+	-->
+	<nav id="NavCode" class="navbar" role="navigation" aria-label="main navigation">
+	<!--Desktop menu, must fix and be viewable on mobile-->	
+	<div class="navbar-menu navbar-end is-active">
+	<div class="navbar-divider" style="position:">
+		<a class="navbar-item">Archive</a>
+		<a class="navbar-item">Collection</a>
+		<a class="navbar-item">Process</a>
+		<a class="navbar-item">About</a>
+	</div>
+	</div>
+	</nav>
+
+<!--
+	Navbar End
+	Archive Grid Start
+-->
+	<div class="columns is-centered">
+      <div class="column is-full container"> 
+        <p class="title has-text-grey has-text-centered"> 
+			The Archive 
+		</p>
+		  
+      </div>
+	  </div> 
+<!-- Grid Generating Script-->
+	 <script type="text/javascript" src="../Website Files/scripts/grid.js">
+	  
+	 </script>
+<!--Archives Grid End
+Collection Start-->
+    <div class="columns">
+      <div class="column is-full container"> 
+        <p class="title has-text-grey has-text-centered"> 
+			Collection 
+		</p>
+		  
+      </div>
+	  </div> 
+<!--	 <div class="columns is-half">-->
+<div class="center-columns">
+  <script type="text/javascript" src="../Website Files/scripts/collection.js">
+
+		 </script>
+</div> 
+  </div>
+</body>
+
+
+</html>
