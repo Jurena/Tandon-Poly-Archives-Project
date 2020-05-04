@@ -1,0 +1,187 @@
+html {
+  scroll-behavior:smooth;
+}
+
+.grid-col{
+	height: 60%; 
+	overflow: hidden; 
+}
+
+
+.force-sq-img{
+  cursor: pointer;
+  transition: 0.3s;
+
+/*
+	position:absolute; 
+	margin: auto; 
+	min-height: 100vh; 
+	min-width: 100vw; 
+*/
+	overflow: hidden; 
+/*
+	left: -5000%; 
+	right: -5000%; 
+	top: -5000%; 
+	bottom:-5000%; 
+*/
+	position:static;
+	z-index:4; 
+	object-fit:cover;
+	width: 99%; 
+	height: 100%; 
+	max-height: 250px; 
+	top: 0;
+	image-rendering: crisp-edges; 
+	
+/* remember you can set the images to be a static val for desktops
+	and make it responsive through the min/max attributes below
+	min-height: 25%;
+	min-width: 25%;
+	max-width: 100%;
+*/
+    float: left;
+}
+
+.force-sq-img:hover {
+	opacity: 0.7;
+    -webkit-transition: all .5s ease; /* Safari and Chrome */
+    -moz-transition: all .5s ease; /* Firefox */
+    -ms-transition: all .5s ease; /* IE 9 */
+    -o-transition: all .5s ease; /* Opera */
+    transition: all .5s ease;
+	-webkit-transform:scale(1.15); /* Safari and Chrome */
+    -moz-transform:scale(1.15); /* Firefox */
+    -ms-transform:scale(1.15); /* IE 9 */
+    -o-transform:scale(1.15); /* Opera */
+    transform:scale(1.15);
+}
+
+.hero{
+	position: sticky; 
+	z-index:2;  
+	margin-bottom: 2%;
+	clear:both; 
+}
+.sidenav{
+	clear:right; 
+	float:right; 
+	width: 100%; 
+	max-width: 10%; 
+	height:100%; 
+	position: fixed; 
+	z-index: 0; 
+	top: 3%; 
+	right: 0%; 
+	overflow-y: hidden; 
+	background-color: transparent; 
+
+}
+
+.sidenav a{
+	position: initial;
+	background-color: white; 
+	display: block;
+	text-decoration-line: underline; 
+}
+.navbar{
+	background-color: transparent;  
+}
+
+/*Modal junk below!! */
+
+
+
+/* The Modal (background) */
+.modalBG {
+  display: none; /* Hidden by default */
+  position: fixed; /* Stay in place */
+  z-index: 100; /* Sit on top */
+  padding: 2%; /* Location of the box */
+  left: 0;
+  top: 0;
+  width: 100vw; /* Full width */
+  height: 100vh; /* Full height */
+  overflow: hidden; /* no scroll if needed */
+  background-color: rgb(0,0,0); /* Fallback color */
+  background-color: rgba(0,0,0,0.9); /* Black w/ opacity */
+  overflow-y: hidden;
+
+}
+html.modal-content{
+  height: 100vh;
+  overflow-y: hidden;
+}
+
+/* Modal Content (Image) */
+.modal-content {
+  margin: auto;
+  display: block;
+  width: 100%;
+  height: 100%; 
+  max-width: 1200px;
+  max-height: 800px; 
+  z-index: 100; 
+  object-fit:scale-down;
+  overflow:hidden; 
+}
+
+.modal-content img{
+  height: 100%; 
+  width: 100%; 
+  object-fit:cover;
+  overflow:hidden; 
+
+} 
+/* Caption of Modal Image (Image Text) - Same Width as the Image */
+#caption {
+  margin: auto;
+  display: block;
+  width: 80%;
+  max-width: 700px;
+  text-align: center;
+  color: #ccc;
+  padding: 10px 0;
+  height: 150px;
+}
+
+/* Add Animation - Zoom in the Modal */
+.modal-content, #caption {
+  animation-name: zoom;
+  animation-duration: 0.6s;
+}
+
+@keyframes zoom {
+  from {transform:scale(0)}
+  to {transform:scale(1)}
+}
+
+/* The Close Button */
+.close {
+  position: absolute;
+  top: 1%;
+  right: 2%;
+  color: #f1f1f1;
+  font-size: 40px;
+  font-weight: bold;
+  transition: 0.3s;
+}
+
+.close:hover,
+.close:focus {
+  color: #bbb;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+/* 100% Image Width on Smaller Screens */
+@media only screen and (max-width: 700px){
+  .modal-content {
+    width: 100%;
+  }
+  .close{
+	width: 100%; 
+	height: 100%; 
+  }
+}
+

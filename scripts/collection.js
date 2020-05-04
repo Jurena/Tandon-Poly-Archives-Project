@@ -23,7 +23,7 @@ function clothes_grid(){
 	"use strict"; 
 	for (var i=0; i<4; i++){
 		newRow = document.createElement("div"); 
-		newRow.classList.add("columns", "is-multiline", "is-mobile", "is-centered", "has-margin-right-75", "has-margin-left-75"); 
+		newRow.classList.add("columns", "is-multiline", "is-mobile", "is-centered", "has-margin-right-80", "has-margin-left-80","has-padding-right-80", "has-padding-left-80", "is-gapless"); 
 		for (var ind=0; ind<3; ind++){
 //			emptyCol = document.createElement("div");
 //			emptyCol.classList.add("column", "is-narrow");

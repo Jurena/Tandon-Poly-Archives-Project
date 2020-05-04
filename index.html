@@ -3,17 +3,21 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Archives Project WIP</title>
+    <title>Polywog Collection</title>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.8.2/css/bulma.min.css">
     <script defer src="https://use.fontawesome.com/releases/v5.3.1/js/all.js"></script>
+
 <!--	  bulma spacing-->
 	<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma-spacing/css/bulma-spacing.min.css">
-	<link rel="stylesheet" src="../Tandon-Poly-Archives-Project/css/main.css">
+<!--my stylesheet -->
+	<link rel="stylesheet" href="../Tandon-Poly-Archives-Project/css/main.css">
+<!--	 lazy loader for our images-->
+<script src="lazysizes.min.js" async=""></script>
 
   </head>
-	
-<body > <!--  onLoad="generate_grid(); clothes_grid();"-->
-  <!-- Banner beginning-->
+  
+<body>   <!-- Banner beginning-->
+<!--	<iframe src="hero.html" style="height:100vh; width:100vw; display:block; position:inherit">-->
       <section class = "hero is-info is-fullheight"> 
         <section class = "hero-head"> </section>
         <section class = "hero body"> 
@@ -24,30 +28,45 @@
 			</div></section>
         <section class = "hero-foot"> 
         </section>
-      </section>  
+      </section>
+<!--	</iframe>-->
   <!-- end of banner
 	Navbar Start 
 	create custom css to make nav sticky to rhs
 	-->
-	<nav id="NavCode" class="navbar" role="navigation" aria-label="main navigation">
-	<!--Desktop menu, must fix and be viewable on mobile-->	
-	<div class="navbar-menu navbar-end is-active">
-	<div class="navbar-divider" style="position:">
-		<a class="navbar-item">Archive</a>
-		<a class="navbar-item">Collection</a>
+	<nav id="NavCode" class="navbar is-active sidenav is-transparent is-size-5 has-margin-left-15 has-margin-right-0 has-padding-right-0 has-padding-left-15 " role="navigation" aria-label="main navigation">
+<!--	Desktop menu, must fix and be viewable on mobile	-->
+	<div class="navbar-menu navbar-end is-transparent">
+	<div class="navbar-divider"> 
+		<a href="#archive" class="navbar-item">Archive</a>
+		<a href="#collection" class="navbar-item">Collection</a>
 		<a class="navbar-item">Process</a>
 		<a class="navbar-item">About</a>
 	</div>
-	</div>
+	</div> 
 	</nav>
-
+<!--wraps the screen from below the banner -->
+<!--
+	<div class="sidenav is-transparent"> 
+		<a href="#archive" class="">Archive</a>
+		<a href="#collection" class="">Collection</a>
+		<a class="">Process</a>
+		<a class="">About</a>
+-->
 <!--
 	Navbar End
 	Archive Grid Start
 -->
-	<div class="columns is-centered">
+	<!-- The Modal -->
+<div id="myModal" class="modalBG">
+  <span class="close">&times;</span>
+  <img class="modal-content" id="img01">
+  <div id="caption" class="has-text-weight-bold is-size-3"></div>
+</div>
+
+	<div class="columns is-centered" id="archive">
       <div class="column is-full"> 
-        <p class="title has-text-grey has-text-centered"> 
+        <p class="title has-text-grey has-text-centered">
 			The Archive 
 		</p>
 		  
@@ -60,9 +79,12 @@
 	  
 	 </script>
 	</div> 
+
+
 <!--Archives Grid End
 Collection Start-->
-    <div class="columns">
+	<br>
+    <div class="columns" id="collection">
       <div class="column is-full container"> 
         <p class="title has-text-grey has-text-centered"> 
 			Collection 
@@ -70,13 +92,15 @@ Collection Start-->
 		  
       </div>
 	  </div> 
-<!--	 <div class="columns is-half">-->
-<div class="center-columns">
+	 <div class="columns is-half">
+<!--<div class="customModal" id="modal">-->
+<!--	<button class="close-button" id="close-button">Close</button>-->
   <script type="text/javascript" src="../Tandon-Poly-Archives-Project/scripts/collection.js">
 
-		 </script>
+ </script>
 </div> 
-  </div>
+<script src="../Tandon-Poly-Archives-Project/scripts/modal.js"></script>
+
 </body>
 
 
