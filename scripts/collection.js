@@ -11,28 +11,56 @@ var docFrag = document.createDocumentFragment();
 var imgCol; 
 var img;
 //curently holds all apparel, must be curated
-var appImgs = ["1976-1989 Black Engineers.png","1976-1989 Text Styalized.png","1976-1989.png","1977 Student.png","1977 Stylized.png","1982-89 Stylized.png","76-89 Text 1.png","76-89 Text 2.png","76-89 Text 3.png","76-89 Text 4.png","Alphas Cropped.png","Alphas.png","ChemE 2.png","ChemE.png","Counterweight.png","German - PW.png","German - Sitins.png","NSBE 1982-89.png","Poets.png","T-Shirt WINO.png","WINO Expansion.png"]; 
+var appImgs = ["Alpha Phi Alpha (ΑΦΑ), 1969.jpg","Chemical Engineer, 1960.jpg","Haitian Student Association,1987-1988.jpg","Protester, 1970.jpg","Protests, 1970 & 1989.jpg","Protests Crew, 1970 & 1989.jpg","Ramon-Counterweight, 1969.jpg","the Engineers,1976-1989.jpg","the Student, 1977.jpg"]; 
 appImgs.sort(); 
-
+var caption = document.getElementById("caption");
+var captionText; 
+var body = document.body; 
+var modal = document.getElementById("myModal");
+//var modalCol = document.createElement("div"); 
+//modalCol.classList.add("columns"); 
+//var modalImgCol = document.createElement("div"); 
+//modalImgCol.classList.add
+var modalImg = document.getElementById("img01");
 //console.log(img); 
 
 //factors of 140
-
+function fixCaption(cap){
+	"use strict";
+	cap = cap.replace("PW", "Polywog")
+	if(cap.includes("jpg")){
+		cap = cap.replace(".jpg", ""); 
+	}
+	else if (cap.includes("png")){
+		cap = cap.replace("png", ""); 
+	}
+	return cap; 
+}
 console.log(docFrag); 
 function clothes_grid(){
 	"use strict"; 
-	for (var i=0; i<4; i++){
+	for (var i=0; i<3; i++){
 		newRow = document.createElement("div"); 
-		newRow.classList.add("columns", "is-multiline", "is-mobile", "is-centered", "has-margin-right-80", "has-margin-left-80","has-padding-right-80", "has-padding-left-80", "is-gapless"); 
+		newRow.classList.add("columns", "is-multiline", "is-mobile", "is-centered", "has-margin-right-100", "has-margin-left-100","has-padding-left-35", "has-padding-right-35"); 
 		for (var ind=0; ind<3; ind++){
-//			emptyCol = document.createElement("div");
-//			emptyCol.classList.add("column", "is-narrow");
 			imgCol = document.createElement("div"); 
-			imgCol.classList.add("column", "image");
+			imgCol.classList.add("column", "image", "is-one-third-desktop", "is-one-third-mobile");
 			img = document.createElement("img"); 
-			img.src = "../Tandon-Poly-Archives-Project/img/Clothing Images/" + appImgs.shift();  
+			img.classList.add("lazyload", "sq-img-app"); 
+			captionText = appImgs.shift(); 
+			img.src = "../Tandon-Poly-Archives-Project/img/curated imgs/" + captionText;  
+			captionText = fixCaption(captionText); 
+			img.alt = captionText;
 			imgCol.appendChild(img); 
-//			newRow.appendChild(emptyCol); 
+			img.onclick = function(){
+			  modal.style.display = "block";
+		      const scrollY = document.documentElement.style.getPropertyValue('--scroll-y');
+			  body.style.position = 'fixed';
+			  body.style.top = `-${scrollY}`;
+			  modalImg.src = this.src;
+			  caption.innerHTML = this.alt; 
+//			  console.log("clicked: " + captionText); 
+			}; 			
 			newRow.appendChild(imgCol); 
 		}
 		docFrag.appendChild(newRow); 
@@ -42,3 +70,22 @@ function clothes_grid(){
 }
 clothes_grid(); 
 console.log("Done"); 
+var span = document.getElementsByClassName("close")[0];
+
+// When the user clicks on <span> (x), close the modal
+span.onclick = function(){
+  "use strict";
+  modal.style.display = "none";
+  const scrollY = body.style.top; 
+  body.style.position = ''; 
+  body.style.top=''; 
+  window.scroll({behavior:'auto'}); 
+  window.scrollTo(0, parseInt(scrollY || '0') * -1);
+//  window.scroll({behavior:'smooth'}); 
+
+}; 
+
+window.addEventListener('scroll', function(){
+  document.documentElement.style.setProperty('--scroll-y', `${window.scrollY}px`);
+}); 
+

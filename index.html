@@ -12,56 +12,79 @@
 <!--my stylesheet -->
 	<link rel="stylesheet" href="../Tandon-Poly-Archives-Project/css/main.css">
 <!--	 lazy loader for our images-->
-<script src="lazysizes.min.js" async=""></script>
+	<script src="lazysizes.min.js" async=""></script>
+<!--	  jquery -->
+	<script src="https://ajax.aspnetcdn.com/ajax/jQuery/jquery-3.4.1.min.js"></script>
+	<script src="../Tandon-Poly-Archives-Project/scripts/smoothscroll.js"></script>
 
   </head>
   
 <body>   <!-- Banner beginning-->
-<!--	<iframe src="hero.html" style="height:100vh; width:100vw; display:block; position:inherit">-->
       <section class = "hero is-info is-fullheight"> 
         <section class = "hero-head"> </section>
         <section class = "hero body"> 
             <div class= "container">
                 <h1 class="title"> 
-                    Full height banner
+                    the Polywog Collection
                 </h1>
 			</div></section>
         <section class = "hero-foot"> 
         </section>
       </section>
-<!--	</iframe>-->
   <!-- end of banner
 	Navbar Start 
 	create custom css to make nav sticky to rhs
 	-->
-	<nav id="NavCode" class="navbar is-active sidenav is-transparent is-size-5 has-margin-left-15 has-margin-right-0 has-padding-right-0 has-padding-left-15 " role="navigation" aria-label="main navigation">
+	<nav class="navbar sidenav is-size-4 has-margin-left-0 has-margin-right-0 has-padding-right-0 has-padding-left-0" role="navigation" aria-label="main navigation" >
+		
 <!--	Desktop menu, must fix and be viewable on mobile	-->
-	<div class="navbar-menu navbar-end is-transparent">
-	<div class="navbar-divider"> 
+<!--
+		<div class-"navbar-brand">
+			<a role="button" class="navbar-burger" data-target="navMenu" aria-label="menu" aria-expanded="false">
+			  <span aria-hidden="true"></span>
+			  <span aria-hidden="true"></span>
+			  <span aria-hidden="true"></span>
+			</a>
+		</div>
+-->
+		<div class="navbar-menu is-active" id="navMenu">
+		<div class="navbar-end navbar-divider">
 		<a href="#archive" class="navbar-item">Archive</a>
 		<a href="#collection" class="navbar-item">Collection</a>
 		<a class="navbar-item">Process</a>
 		<a class="navbar-item">About</a>
-	</div>
-	</div> 
+
+
+<!--
+		<span id="nav-toggle" class="nav-toggle"  onclick="document.getElementByClassName('navbar-menu').classList.toggle('is-active');">
+		  <span></span>
+		  <span></span>
+		  <span></span>
+		</span>
+-->
+
+		</div>
+		</div>
 	</nav>
-<!--wraps the screen from below the banner -->
-<!--
-	<div class="sidenav is-transparent"> 
-		<a href="#archive" class="">Archive</a>
-		<a href="#collection" class="">Collection</a>
-		<a class="">Process</a>
-		<a class="">About</a>
--->
-<!--
-	Navbar End
-	Archive Grid Start
--->
-	<!-- The Modal -->
+<!-- The Modal 
+Empty divs placed there such that they can have 
+column classes added and removed from them once a 
+user click on the apparel modal-->
 <div id="myModal" class="modalBG">
   <span class="close">&times;</span>
-  <img class="modal-content" id="img01">
-  <div id="caption" class="has-text-weight-bold is-size-3"></div>
+	<div id="ModalColumns">
+	  <div id="modalImgCol">
+		  <div class="click-zoom">	
+			<label>
+			<input type="checkbox">
+			<img class="modal-content" id="img01">
+			</lable>
+		  </div>
+	  </div>
+	  <div id="modalCaptionCol">
+		<div id="caption" class="has-text-weight-bold is-size-3"></div>  
+	  </div>
+	</div>
 </div>
 
 	<div class="columns is-centered" id="archive">
@@ -99,7 +122,6 @@ Collection Start-->
 
  </script>
 </div> 
-<script src="../Tandon-Poly-Archives-Project/scripts/modal.js"></script>
 
 </body>
 
