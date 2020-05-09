@@ -11,7 +11,7 @@ var docFrag = document.createDocumentFragment();
 var imgCol; 
 var img;
 //curently holds all apparel, must be curated
-var appImgs = ["Alpha Phi Alpha (ΑΦΑ), 1969.jpg","Chemical Engineer, 1960.jpg","Haitian Student Association,1987-1988.jpg","Protester, 1970.jpg","Protests, 1970 & 1989.jpg","Protests Crew, 1970 & 1989.jpg","Ramon-Counterweight, 1969.jpg","the Engineers,1976-1989.jpg","the Student, 1977.jpg"]; 
+var appImgs = ["the Host (WINO), 1976.jpg","Alpha Phi Alpha (ΑΦΑ), 1969.jpg","Chemical Engineer, 1960.jpg","Haitian Student Association,1987-1988.jpg","Protests, 1970 & 1989.jpg","Protests Crew, 1970 & 1989.jpg","Ramon-Counterweight, 1969.jpg","the Engineers,1976-1989.jpg","the Student, 1977.jpg","the Poet, 1968.jpg","Protester, 1970.jpg","Haitian Student Association,1987-1988.jpg","the Logo, 1967.jpg","the National Society of Black Engineers, 1982 & 1989.jpg","the (Big) Logo, 1967.jpg"]; 
 appImgs.sort(); 
 var caption = document.getElementById("caption");
 var captionText; 
@@ -39,7 +39,7 @@ function fixCaption(cap){
 console.log(docFrag); 
 function clothes_grid(){
 	"use strict"; 
-	for (var i=0; i<3; i++){
+	for (var i=0; i<5; i++){
 		newRow = document.createElement("div"); 
 		newRow.classList.add("columns", "is-multiline", "is-mobile", "is-centered", "has-margin-right-100", "has-margin-left-100","has-padding-left-35", "has-padding-right-35"); 
 		for (var ind=0; ind<3; ind++){
@@ -47,7 +47,7 @@ function clothes_grid(){
 			imgCol.classList.add("column", "image", "is-one-third-desktop", "is-one-third-mobile");
 			img = document.createElement("img"); 
 			img.classList.add("lazyload", "sq-img-app"); 
-			captionText = appImgs.shift(); 
+			captionText = appImgs.pop(); 
 			img.src = "../Tandon-Poly-Archives-Project/img/curated imgs/" + captionText;  
 			captionText = fixCaption(captionText); 
 			img.alt = captionText;
