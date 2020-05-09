@@ -13,8 +13,23 @@ var docFrag = document.createDocumentFragment();
 var imgCol; 
 var img;
 //curently holds all apparel, must be curated
-var appImgs = ["the Host (WINO), 1976.jpg","Alpha Phi Alpha (ΑΦΑ), 1969.jpg","Chemical Engineer, 1960.jpg","Haitian Student Association,1987-1988.jpg","Protests, 1970 & 1989.jpg","Protests Crew, 1970 & 1989.jpg","Ramon-Counterweight, 1969.jpg","the Engineers,1976-1989.jpg","the Student, 1977.jpg","the Poet, 1968.jpg","Protester, 1970.jpg","Haitian Student Association,1987-1988.jpg","the Logo, 1967.jpg","the National Society of Black Engineers, 1982 & 1989.jpg","the (Big) Logo, 1967.jpg"]; 
-appImgs.sort(); 
+var appImgs = ["the Host (WINO), 1976.jpg","Alpha Phi Alpha (ΑΦΑ), 1969.jpg","Chemical Engineer, 1960.jpg","Haitian Student Association,1987-1988.jpg","Protests, 1970 & 1989.jpg","Protests Crew, 1970 & 1989.jpg","Ramon-Counterweight, 1969.jpg","the Engineers,1976-1989.jpg","the Student, 1977.jpg","the Poet, 1968.jpg","Protester, 1970.jpg","Haitian Student Association,1987-1988.jpg","the Logo, 1967.jpg","the National Society of Black Engineers, 1982 & 1989.jpg","the (Big) Logo, 1967.jpg"];
+var appDict = {"the Host (WINO), 1976.jpg":"PW 1976 - P167 WINO 3.jpg",
+			   "Alpha Phi Alpha (ΑΦΑ), 1969.jpg":"PW 1969 - P56 Alphas.jpg",
+			   "Chemical Engineer, 1960.jpg":"PW 1960 - P70 Black Chem E.jpg",
+			   "Haitian Student Association,1987-1988.jpg":"PW 1987 - P122 HSA.jpg,PW 1988 - P118 HSA.jpg",
+			   "Protests, 1970 & 1989.jpg":"PW 1970 - P140 Protest.jpg,PW 1989 - P168 Sit-Ins.jpg",
+			   "Protests Crew, 1970 & 1989.jpg":"PW 1970 - P140 Protest.jpg,PW 1989 - P168 Sit-Ins.jpg",
+			   "Ramon-Counterweight, 1969.jpg":"PW 1969 - P118 Ramon Counterweight.jpg",
+			   "the Engineers,1976-1989.jpg":"PW 1976 - P166 BSU.jpg,PW 1987 - P122 HSA.jpg,PW 1988 - P118 HSA.jpg,PW 1989 - P145 NSBE.jpg",
+			   "the Student, 1977.jpg":"PW 1977 - P142 Student.jpg",
+			   "the Poet, 1968.jpg":"PW 1968 - P90 Poet.jpg",
+			   "Protester, 1970.jpg":"PW 1970 - P140 Protest.jpg",
+			   "Haitian Student Association,1987-1988.jpg":"PW 1987 - P122 HSA.jpg,PW 1988 - P118 HSA.jpg",
+			   "the Logo, 1967.jpg":"PW 1967 - Polywog Logo Inspo.jpg",
+			   "the National Society of Black Engineers, 1982 & 1989.jpg":"PW 1982 - P184 NSBE.jpg,PW 1989 - P145 NSBE.jpg",
+			   "the (Big) Logo, 1967.jpg":"PW 1967 - Polywog Logo Inspo.jpg"
+			  };
 var caption = document.getElementById("caption");
 var oldCap = caption.cloneNode(true); 
 var captionText; 
