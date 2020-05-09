@@ -79,25 +79,27 @@ column classes added and removed from them once a
 user click on the apparel modal-->
 <div id="myModal" class="modalBG">
   <span class="close">&times;</span>
-	<div id="ModalColumns">
-	  <div id="modalImgCol">
-		  <div class="click-zoom">	
+<!--Columns to hold columns-->
+	<div id="ModalColumns" > 	
+	<!--the Modal Column-->
+	  <div id="col">
+		  <div class="click-zoom" id="zoom">	
 			<label>
 			<input type="checkbox">
 			<img class="modal-content" id="img01">
 			</lable>
 		  </div>
-	  </div>
-	  <div id="modalCaptionCol">
-		<div id="caption" class="has-text-weight-bold is-size-3"></div>  
+		<div id="caption" class="has-text-weight-bold is-size-3 has-text-centered"></div>  
+		<hr id="refLine" style="display: none"> 
+		<div id="refImages"> </div>
 	  </div>
 	</div>
 </div>
 
 	<div class="columns is-centered" id="archive">
       <div class="column is-full"> 
-        <p class="title has-text-grey has-text-centered">
-			The Archive 
+        <p class="title has-text-grey has-text-centered is-size-2-desktop">
+			the Archive 
 		</p>
 		  
       </div>
@@ -116,8 +118,8 @@ Collection Start-->
 	<br>
     <div class="columns" id="collection">
       <div class="column is-full container"> 
-        <p class="title has-text-grey has-text-centered"> 
-			Collection 
+        <p class="title has-text-grey has-text-centered is-size-2-desktop"> 
+			the Collection 
 		</p>
 		  
       </div>
