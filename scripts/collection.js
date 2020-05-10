@@ -12,6 +12,7 @@ var docFrag = document.createDocumentFragment();
 //put placeholder image in image var for now, append to imgcol
 var imgCol; 
 var img;
+var scrolly; 
 //curently holds all apparel, must be curated
 var appImgs = ["the Host (WINO), 1976.jpg","Alpha Phi Alpha (ΑΦΑ), 1969.jpg","Chemical Engineer, 1960.jpg","Haitian Student Association,1987-1988.jpg","Protests, 1970 & 1989.jpg","Protests Crew, 1970 & 1989.jpg","Ramon-Counterweight, 1969.jpg","the Engineers,1976-1989.jpg","the Student, 1977.jpg","the Poet, 1968.jpg","Protester, 1970.jpg","Haitian Student Association,1987-1988.jpg","the Logo, 1967.jpg","the National Society of Black Engineers, 1982 & 1989.jpg","the (Big) Logo, 1967.jpg"];
 var appDict = {"the Host (WINO), 1976.jpg":"PW 1976 - P167 WINO 3.jpg",
@@ -89,10 +90,11 @@ function refText(){
 	var docFrag = document.createDocumentFragment(); 
 	var pTag = document.createElement("p");
 	pTag.setAttribute("style", "margin-top:-30px"); 
-	var txt = document.createTextNode("Image(s) Used In This Design: "); 
+	var txt = document.createTextNode("In this Piece: "); 
 	pTag.appendChild(txt); 
 	docFrag.appendChild(pTag); 
 	var refImg = document.createElement("img"); 
+	refImg.setAttribute("style","height:50%;width:50%")
 	refImg.src= "../Tandon-Poly-Archives-Project/img/resized Imgs/PW 1968 - P90 Poet.jpg"; 
 	docFrag.appendChild(refImg); 
 	return docFrag; 
@@ -110,7 +112,9 @@ function unstyleModal(){
 	refLine.style.display= "none"; 
 	caption.removeAttribute("style"); 
 	refImages.classList.remove("has-text-centered", "is-size-4", "has-text-bold","column"); 
-	refImages.innerHTML=""; 
+	while (refImages.firstChild){
+		refImages.removeChild(refImages.firstChild); 
+	}
 	console.log("Modal UnStyled"); 
 
 }
@@ -121,19 +125,22 @@ function clothes_grid(){
 		newRow.classList.add("columns", "is-multiline", "is-mobile", "is-centered", "has-margin-right-100", "has-margin-left-100","has-padding-left-35", "has-padding-right-35"); 
 		for (var ind=0; ind<3; ind++){
 			imgCol = document.createElement("div"); 
-			imgCol.classList.add("column", "image", "is-one-third-desktop", "is-one-third-mobile");
+			imgCol.classList.add("column", "is-one-third-desktop", "is-one-third-mobile");
 			img = document.createElement("img"); 
 			img.classList.add("lazyload", "sq-img-app"); 
 			captionText = appImgs.pop(); 
 			img.src = "../Tandon-Poly-Archives-Project/img/curated imgs/" + captionText;  
+//			img.srcset = appDict[captionText]; 
 			captionText = fixCaption(captionText); 
 			img.alt = captionText;
 			imgCol.appendChild(img); 
 			img.onclick = function(){
+			  "use string"; 
+			  scrolly = document.documentElement.style.getPropertyValue('--scroll-y');
+			  console.log("Scroll Y on Image Click: " + scrolly); 
 			  modal.style.display = "block";
-		      const scrollY = document.documentElement.style.getPropertyValue('--scroll-y');
 			  body.style.position = 'fixed';
-			  body.style.top = `-${scrollY}`;
+			  body.style.top = `-${parseInt(scrolly || '0')}px`;
 			  styleModal(); 
 			  modalImg.src = this.src;
 			  caption.innerHTML = this.alt; 
@@ -148,18 +155,29 @@ function clothes_grid(){
 }
 clothes_grid(); 
 console.log("Done"); 
-var span = document.getElementsByClassName("close")[0];
+// Get the <span> element that closes the modal
 
 // When the user clicks on <span> (x), close the modal
-span.onclick = function(){
-  "use strict";
-  modal.style.display = "none";
-  var scrollY = body.style.top; 
-  body.style.position = ''; 
-  body.style.top=''; 
-  window.scroll({behavior:'auto'}); 
-  window.scrollTo(0, parseInt(scrollY || '0') * -1);
-  unstyleModal(); 
-}; 
+close.addEventListener('click',() => {
+	"use strict"; 
+	unstyleModal(); 
+//	console.log("Closing the modal: " + body.style.top); 
+//	modal.style.display = "none";
+//	console.log(typeof(body.style.top)); 
+//	if (body.style.top.length !== 0){
+//		scrolly =''; 
+//		scrolly = body.style.top; 
+//	}
+//	console.log("Scroll Y: " +scrolly); 
+//	body.style.position = ''; 
+//	body.style.top=''; 
+//	window.scroll({behavior:'auto'}); 
+//	window.scrollTo(0, parseInt(scrolly || '0') * -1);
+}); 
 
+//
+//window.addEventListener('scroll', function(){
+//  document.documentElement.style.setProperty('--scroll-y', `${window.scrollY}px`);
+//}); 
+//
 

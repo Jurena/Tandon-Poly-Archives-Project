@@ -13,36 +13,16 @@ html {
 .force-sq-img{
   cursor: pointer;
   transition: 0.3s;
-
-/*
-	position:absolute; 
-	margin: auto; 
-	min-height: 100vh; 
-	min-width: 100vw; 
-*/
-	overflow: hidden; 
-/*
-	left: -5000%; 
-	right: -5000%; 
-	top: -5000%; 
-	bottom:-5000%; 
-*/
-	position:static;
-	z-index:4; 
-	object-fit:cover;
-	width: 99%; 
-	height: 100%; 
-	max-height: 250px; 
-	top: 0;
-	image-rendering: crisp-edges; 
-	
-/* remember you can set the images to be a static val for desktops
-	and make it responsive through the min/max attributes below
-	min-height: 25%;
-	min-width: 25%;
-	max-width: 100%;
-*/
-    float: left;
+  overflow: hidden; 
+  position:static;
+  z-index:4; 
+  object-fit:cover;
+  width: 99%; 
+  height: 100%; 
+  max-height: 250px; 
+  top: 0;
+  image-rendering: crisp-edges; 
+  float: left;
 }
 
 .sq-img-app{
@@ -52,10 +32,9 @@ html {
   position:static;
   z-index:4; 
   object-fit:cover;
-  width: 100%; 
-  height: auto; 
+  width: 99%; 
+  height: 100%; 
   max-height: 400px;
-/*  min-height: 100px; */
   top: 0;
   image-rendering: crisp-edges; 	
   float: left;
@@ -154,7 +133,7 @@ html {
 .modalBG {
   display: none; /* Hidden by default */
   position: fixed; /* Stay in place */
-  z-index: 100; /* Sit on top */
+  z-index: 99; /* Sit on top */
   padding: 2%; /* Location of the box */
   left: 0;
   top: 0;
@@ -164,12 +143,27 @@ html {
   background-color: rgb(0,0,0); /* Fallback color */
   background-color: rgba(0,0,0,0.9); /* Black w/ opacity */
 /*  overflow-y: hidden;*/
-  overflow:auto; 
+  overflow-y:auto; 
+  overflow-x:hidden; 
 
+}
+.bgClose{
+  margin: 0; 
+  padding: 0; 
+  position:relative; 
+  z-index: 100; 
+  top:0;
+  left:0; 
+  height:100vh; 
+  width: 100vw;
+  overflow-x: hidden; 
+/*  cursor: pointer;*/
 }
 html.modal-content{
   height: 100vh;
-  overflow:auto; 
+  overflow-x:hidden; 
+  overflow-y:visible; 
+
 }
 
 /* Modal Content (Image) */
@@ -177,12 +171,16 @@ html.modal-content{
   margin: auto;
   display: block;
   width: 100%;
-  height: 100%; 
+  height: 100%;
+  top:0; 
+  left:0; 
   max-width: 90vw;
-  max-height: 80vh; 
-  z-index: 100; 
+  max-height: 85vh; 
   object-fit:scale-down;
-  overflow:auto; 
+  overflow-y:visible; 
+  position: relative; 
+  z-index: 99;  
+  overflow-x:hidden; 
 
 }
 
@@ -190,9 +188,9 @@ html.modal-content{
   height: 100%; 
   width: 100%; 
   object-fit:cover;
-  overflow:auto; 
-
-/*  overflow:hidden; */
+  overflow-x:hidden; 
+  position: relative; 
+  z-index: 105; 
 } 
 /* Caption of Modal Image (Image Text) - Same Width as the Image */
 #caption {
@@ -223,7 +221,7 @@ html.modal-content{
   top: 1%;
   right: 2%;
   color: #f1f1f1;
-  font-size: 40px;
+  font-size: 60px;
   min-height: 40px; 
   min-width: 40px; 
   padding: 10px; 
@@ -266,6 +264,7 @@ html.modal-content{
 .click-zoom input[type=checkbox] {
   display: none
 }
+/*
 
 .click-zoom img {
   transition: transform 0.25s ease;
@@ -278,6 +277,7 @@ html.modal-content{
   cursor: zoom-out;
 
 }
+*/
 
 .bannerButton{
 	align-self: flex-end;

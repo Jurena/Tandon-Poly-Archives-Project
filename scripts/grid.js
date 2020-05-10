@@ -20,7 +20,7 @@ var appImgs = ["the Host (WINO), 1976.jpg","Alpha Phi Alpha (ΑΦΑ), 1969.jpg",
 //console.log("Size of App Images: " + appImgs.length); 
 var caption = document.getElementById("caption");
 var captionText; 
- 
+var scrolly; 
 var body = document.body; 
 function fixCaption(cap){
 	"use strict";
@@ -66,10 +66,12 @@ function generate_grid(){
 				seven = 0; 
 			}
 			img.onclick = function(){
+			  scrolly = document.documentElement.style.getPropertyValue('--scroll-y');
+			  console.log("Scroll Y on Image Click: " + scrolly)
 			  modal.style.display = "block";
-		      const scrollY = document.documentElement.style.getPropertyValue('--scroll-y');
 			  body.style.position = 'fixed';
-			  body.style.top = `-${scrollY}`;
+			  body.style.top = `-${parseInt(scrolly || '0')}px`;
+		      console.log(body.style.top)
 			  modalImg.src = this.src;
 			  caption.innerHTML = this.alt; 
 //			  console.log("clicked: " + captionText); 
@@ -98,20 +100,25 @@ console.log("Done");
 //var captionText = document.getElementById("caption");
 
 // Get the <span> element that closes the modal
-var span = document.getElementsByClassName("close")[0];
+var close = document.getElementsByClassName("bgClose")[0];
 
 // When the user clicks on <span> (x), close the modal
-span.onclick = function(){
-  "use strict";
-  modal.style.display = "none";
-  const scrollY = body.style.top; 
-  body.style.position = ''; 
-  body.style.top=''; 
-  window.scroll({behavior:'auto'}); 
-  window.scrollTo(0, parseInt(scrollY || '0') * -1);
-//  window.scroll({behavior:'smooth'}); 
+close.addEventListener('click',() => {
+	"use strict"
+	console.log("Closing the modal: " + body.style.top); 
+	modal.style.display = "none";
+	console.log(typeof(body.style.top)); 
+	if (body.style.top.length !== 0){
+		scrolly =''; 
+		scrolly = body.style.top; 
+	}
+	console.log("Scroll Y: " +scrolly); 
+	body.style.position = ''; 
+	body.style.top=''; 
+	window.scroll({behavior:'auto'}); 
+	window.scrollTo(0, parseInt(scrolly || '0') * -1);
+}); 
 
-}; 
 
 window.addEventListener('scroll', function(){
   document.documentElement.style.setProperty('--scroll-y', `${window.scrollY}px`);
