@@ -307,7 +307,44 @@ html.modal-content{
 	100% { transform: scale(1,1)      translateY(0); }
 }
 
-.ModalColumns{
-
+.referenceImages{
+	margin: auto;
+	margin-top: -10px;
+	height:  100%; 
+	width: 100%; 
+	max-height: 500px; 
+	max-width: 100%; 
+	object-fit: scale-down; 
+	z-index: 100;
+	position: relative; 
+	display: block; 
+}
+.is-half.referenceImages{
+	max-height: 250px; 
+}
+.refImgoverlay {
+  position: inherit;
+  bottom: 0;
+  background: rgb(0, 0, 0);
+  background: rgba(0, 0, 0, 0.5); /* Black see-through */
+  color: #f1f1f1;
+  width: auto;
+  height: auto;
+  transition: .5s ease;
+  opacity:0;
+  color: white;
+  text-align: center;
+  z-index: 120; 
+  display:inline-block; 
+  margin: auto; 
+}
+.is-half#overlayContainer{
+	margin-bottom: 3%; 
 }
 
+#overlayContainer:hover
+	.refImgoverlay{
+	cursor: pointer;
+	opacity: 1; 
+
+}
