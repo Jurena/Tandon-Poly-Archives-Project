@@ -1,14 +1,12 @@
-/*
-html {
-  scroll-behavior:smooth;
+@font-face {
+	font-family: 'Bahnschrift'; 
+	src: url("//db.onlinewebfonts.com/t/0a6ee448d1bd65c56f6cf256a7c6f20a.eot"); 
+	src: url("//db.onlinewebfonts.com/t/0a6ee448d1bd65c56f6cf256a7c6f20a.eot?#iefix") format("embedded-opentype"), url("//db.onlinewebfonts.com/t/0a6ee448d1bd65c56f6cf256a7c6f20a.woff2") format("woff2"), url("//db.onlinewebfonts.com/t/0a6ee448d1bd65c56f6cf256a7c6f20a.woff") format("woff"), url("//db.onlinewebfonts.com/t/0a6ee448d1bd65c56f6cf256a7c6f20a.ttf") format("truetype"), url("//db.onlinewebfonts.com/t/0a6ee448d1bd65c56f6cf256a7c6f20a.svg#Bahnschrift") format("svg"); 
 }
-*/
-
 .grid-col{
 	height: 60%; 
 	overflow: hidden; 
 }
-
 
 .force-sq-img{
   cursor: pointer;
@@ -346,5 +344,81 @@ html.modal-content{
 	.refImgoverlay{
 	cursor: pointer;
 	opacity: 1; 
+}
 
+/*Animated Images Starts Here:*/
+.fallingImgs > img {
+	position: relative; 
+	display: inline-block;
+	object-fit: scale-down;
+	height: 100%; 
+	width: 100%; 
+	max-width: 200px;
+	max-height: 200px;
+	margin:-280px 40px 50px -45px;
+	-webkit-animation: fallingImgs 10s infinite linear;
+	-moz-animation: fallingImgs 10s infinite linear;
+}
+.fallingImgs img:hover{
+	-webkit-animation-play-state: paused;
+    -moz-animation-play-state: paused;
+    -o-animation-play-state: paused;
+     animation-play-state: paused;
+}
+.fallingImgs img:nth-child(2n) {
+	-webkit-animation-delay: 0s;
+	-moz-animation-delay:0s; 
+} 
+.fallingImgs img:nth-child(3n) {
+	-webkit-animation-delay: .5s;
+	-moz-animation-delay: .5s; 
+} 
+.fallingImgs img:nth-child(5n) {
+	-webkit-animation-delay:1s ;
+	-moz-animation-delay: 1s; 
+} 
+.fallingImgs img:nth-child(7n) {
+	-webkit-animation-delay:1.5s ;
+	-moz-animation-delay: 1.5s; 
+} 
+.fallingImgs img:nth-child(11n) {
+	-webkit-animation-delay: 2s;
+	-moz-animation-delay: 2s; 
+}
+.fallingImgs img:nth-child(2n+1) {
+	-webkit-animation-delay: 3s ;
+	-moz-animation-delay: 3s; 
+} 
+.fallingImgs img:nth-child(3n+2) {
+	-webkit-animation-delay: 4s;
+	-moz-animation-delay: 4s; 
+}
+ 
+.fallingImgs img:nth-child(5n+3) {
+	-webkit-animation-delay: 5s;
+	-moz-animation-delay: 5s; 
+} 
+.fallingImgs img:nth-child(7n+5) {
+	-webkit-animation-delay: 6s;
+	-moz-animation-delay:6s ; 
+} 
+.fallingImgs img:nth-child(11n+7) {
+	-webkit-animation-delay: 7s;
+	-moz-animation-delay: 7s; 
+}
+
+@-webkit-keyframes fallingImgs {
+	0% {
+		opacity: 1;
+		-webkit-transform: translate(0, 0px) rotateZ(0deg);
+	}
+
+	75% {
+		opacity: .75;
+		-webkit-transform: translate(100px, 600px) rotateZ(15deg);
+	}
+	100% {
+		opacity: 0;
+		-webkit-transform: translate(150px, 800px) rotateZ(30deg);
+	}
 }

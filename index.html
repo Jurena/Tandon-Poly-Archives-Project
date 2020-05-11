@@ -4,31 +4,42 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Polywog Collection</title>
+<!--	  the font-->
+<!--	  bulma-->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.8.2/css/bulma.min.css">
-    <script defer src="https://use.fontawesome.com/releases/v5.3.1/js/all.js"></script>
-
 <!--	  bulma spacing-->
 	<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma-spacing/css/bulma-spacing.min.css">
-<!--my stylesheet -->
+	    <!--my stylesheet -->
 	<link rel="stylesheet" href="../Tandon-Poly-Archives-Project/css/main.css">
+
+
 <!--	 lazy loader for our images-->
 	<script src="lazysizes.min.js" async=""></script>
 <!--	  jquery -->
 	<script src="https://ajax.aspnetcdn.com/ajax/jQuery/jquery-3.4.1.min.js"></script>
 	<script src="../Tandon-Poly-Archives-Project/scripts/smoothscroll.js"></script>
+<!--banner script-->
 
   </head>
   
-<body>   <!-- Banner beginning-->
-      <section class = "hero is-dark is-fullheight"> 
+<body style="font-family:Bahnschrift">   <!-- Banner beginning-->
+      <section class = "hero is-dark is-fullheight" id="Home"> 
+        <section class = "hero-head fallingImgs" id="heroHead"> 
+			  	<script type="text/javascript" src="../Tandon-Poly-Archives-Project/scripts/RainImgs.js"></script>
 
-        <section class = "hero-head"> 
 		  </section>
         <section class = "hero body"> 
-            <div class= "container">
-                <h1 class="title is-size-1 has-text-centered"> 
+            <div class= "container" >
+                <h1 class="title is-size-1 has-text-centered" > 
                     the Polywog Collection
                 </h1>
+				<h2 class="subtitle is-size-4 has-text-centered" id="herotext">
+					A line of campus apparel, inspired by black and latinx 
+					engineering students.
+				<p class="is-size-5 has-text-centered">
+					~Images sourced from NYU Poly Archives (1887-2009)~
+				</p>
+				</h2>
 			</div></section>
         <section class = "hero-foot">
 			<div class="has-text-centered">
@@ -54,12 +65,13 @@
 			</a>
 		</div>
 -->
-		<div class="navbar-menu is-active" id="navMenu">
+		<div class="navbar-menu is-active" id="navMenu" style="font-family:Bahnschrift">
 		<div class="navbar-end navbar-divider">
+		<a href="#Home" class="navbar-item">Home</a>
 		<a href="#archive" class="navbar-item">Archive</a>
 		<a href="#collection" class="navbar-item">Collection</a>
-		<a class="navbar-item">Process</a>
-		<a class="navbar-item">About</a>
+		<a href="#process" class="navbar-item">Process</a>
+		<a href="#about" class="navbar-item">About</a>
 
 
 <!--
@@ -99,7 +111,7 @@ user click on the apparel modal-->
 
 	<div class="columns is-centered" id="archive">
       <div class="column is-full"> 
-        <p class="title has-text-grey has-text-centered is-size-2-desktop">
+        <p class="title has-text-grey has-text-centered is-size-2-desktop is-size-3-mobile" style="font-family:Bahnschrift">
 			the Archive 
 		</p>
 		  
@@ -119,10 +131,9 @@ Collection Start-->
 	<br>
     <div class="columns" id="collection">
       <div class="column is-full container"> 
-        <p class="title has-text-grey has-text-centered is-size-2-desktop is-size-3-"> 
+        <p class="title has-text-grey has-text-centered is-size-2-desktop is-size-3-mobile" style="font-family:Bahnschrift"> 
 			the Collection 
 		</p>
-		  
       </div>
 	  </div> 
 	 <div class="columns is-half">
@@ -132,6 +143,33 @@ Collection Start-->
 
  </script>
 </div> 
+<div class="columns" id="process">
+  <div class="column is-full"> 
+        <p class="title has-text-grey has-text-centered is-size-2-desktop is-size-3-mobile" style="font-family:Bahnschrift">
+			the Process 
+		</p>
+  </div>
+  </div> 
+<div class="columns">
+  <div class="column"></div>
+  <div class="column is-half"> 
+	<p class="has-text-centered is-size-3-desktop is-size-3-tablet is-size-4-mobile" style="margin-top:-1%">
+		"the Polywog Collection" is a love letter 4 years in the making. 
+	</p>
+	<p class="has-text-justified is-size-5-desktop is-size-5-tablet is-size-6-mobile">
+		In the Summer of 2019, I became the ARL/NYU Digital Library Fellow. I was tasked with creating a project centered on digital stewardship and library sciences. At the suggestion of the NYU Bern Dibner Library Head Archivist, Lindsay Anderberg, I began an exploration into the NYU Poly Archives and Special Collections.
+	</p>
+	<p class="image has-text-centered" > 
+		<img style="height: 50%;width: 50%;object-fit: scale-down;margin: auto;" src="img/archive_after_crop.jpg" alt="Entrance to the NYU Poly Archives and Special Collections"> 
+  	</p> 
+	<p class="has-text-justified is-size-5-desktop is-size-5-tablet is-size-6-mobile">
+		"the Polywog Collection" is a love letter 4 years in the making. 
+	</p>
+  </div>
+  <div class="column"></div>
+
+</div>
+	
 
 </body>
 
