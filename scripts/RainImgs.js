@@ -7,7 +7,7 @@ var length = arcImgs.length
 var result = document.createDocumentFragment(); 
 function fillHero() {
 	"use strict"; 
-	for (var i =0; i<=40; i++){
+	for (var i =0; i<=35; i++){
 		var ind = Math.floor(Math.random() * length); 
 		console.log("the Ind: " + ind); 
 		img = document.createElement("img"); 
