@@ -25,6 +25,5 @@ window.onload = () =>{
 	"use strict"; 
 	fillHero(); 
 };  
-fillHero(); 
 
  
