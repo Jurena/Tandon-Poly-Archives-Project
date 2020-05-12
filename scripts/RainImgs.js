@@ -10,11 +10,13 @@ function fillHero() {
 	for (var i =0; i<=35; i++){
 		var ind = Math.floor(Math.random() * len); 
 		console.log("the Ind: " + ind); 
+		console.log
 		img = document.createElement("img"); 
 		img.id = "img" +i; 
 		img.src = URLbase + imgs[ind]; 
 		img.alt = "Falling Image from Hero Banner: " +  imgs[ind]; 
 		if ((typeof(imgs[ind])) !== undefined ) {
+			console.log("Found Undefined!"); 
 			result.appendChild(img); 
 		}
 		//no duplicates in banner

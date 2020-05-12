@@ -422,3 +422,8 @@ html.modal-content{
 		-webkit-transform: translate(150px, 800px) rotateZ(30deg);
 	}
 }
+.e-mail:before {
+	content: attr(data-website) "\0040" attr(data-user);
+	unicode-bidi: bidi-override;
+	direction: rtl;
+}
